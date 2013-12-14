@@ -2,29 +2,6 @@
 
 <h2>Update product</h2>
 
-<%= form_for @product do |f| %>
-
-    <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description, rows: 10, col: 2 %>
-    </div>
-    <div class="field">
-      <%= f.label :image_url %><br>
-      <%= f.text_field :image_url %>
-    </div>
-    <div class="field">
-      <%= f.label :price %><br>
-      <%= f.text_field :price %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
-
-<%= link_to 'Show', @product %>
+<%= render 'form' %>
 
 <%= link_to 'Back', products_url %>

@@ -9,21 +9,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  # DELETE /products/1
-  def destroy
-    Product.find(params[:id]).destroy
-    redirect_to products_url
-  end
-
   # GET /products/new
   def new
     @product = Product.new
   end
-
-  # GET /products/1/edit
-  def edit
-  end
-
   # POST /products
   def create
     @product = Product.new(product_params)
@@ -35,6 +24,11 @@ class ProductsController < ApplicationController
     end
   end
 
+
+  # GET /products/1/edit
+  def edit
+    @product = Product.find(params[:id])
+  end
   # PATCH/PUT /products/1
   def update
     @product = Product.find(params[:id])
@@ -44,6 +38,12 @@ class ProductsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  # DELETE /products/1
+  def destroy
+    Product.find(params[:id]).destroy
+    redirect_to products_url
   end
 
 private
