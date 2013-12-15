@@ -1,0 +1,13 @@
+<% provide(:title, 'Sow cart') %>
+
+<h1>My cart</h1>
+<ul>
+  <%= @cart.line_items.each do |item| %>
+    <li>
+      <%= item.product.title %>       <br/>
+      <%= item.product.description %> <br/>
+      <%= item.product.price %>
+    </li>
+  <% end %>
+</ul>
+

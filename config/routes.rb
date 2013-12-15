@@ -1,13 +1,13 @@
 Eurotrade::Application.routes.draw do
 
-  get 'help',    to: 'static_pages#help'
-  get 'about',   to: 'static_pages#about'
-  get 'contact', to: 'static_pages#contact'
+  get 'help',    to: 'store#help'
+  get 'about',   to: 'store#about'
+  get 'contact', to: 'store#contact'
 
   resources :products
   resources :line_items
 
-  root 'products#index'
+  root 'store#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
